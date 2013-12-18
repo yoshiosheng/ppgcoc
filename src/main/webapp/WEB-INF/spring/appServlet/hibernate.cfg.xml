@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+		
+<hibernate-configuration>
+  <session-factory>
+  	<!-- We're using MySQL database so the dialect needs to MySQL as well-->
+  	<!-- We're using InnoDB engine as it guarantees ACID mechanism and transactional integrity -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    <!-- Enable this to see the SQL statements in the logs-->
+    <property name="show_sql">true</property>
+    <!-- DB schema will be updated if needed -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <!-- Singleton cache Provider plugin for Hibernate 3.2 and ehcache-1.2. -->
+    <!-- New in this provider is support for non Serializable keys and values. -->
+    <!-- This provider works as a Singleton. -->
+    <!-- No matter how many Hibernate Configurations you have, only one ehcache CacheManager is used. -->
+    <!-- See EhCacheProvider for a non-singleton implementation. -->
+    <property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</property>
+    <!--<property name="hibernate.cache.use_query_cache">true</property>-->
+    <!-- Enable second-level cache-->
+    <property name="hibernate.cache.use_second_level_cache">true</property>
+
+    <mapping class="com.productprint.pp.security.User"/>
+    <mapping class="com.productprint.pp.security.permission.Role"/>
+    
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Certificate Of Conformance</title>
+<!--This is the font pulled from google webfont-->
+<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'/>
+<!--This css stylesheet reset everything at the beginning -->
+<link href="styles/reset.css" rel="stylesheet" type="text/css" />
+<!--This is the less style -->
+<link rel="stylesheet" type="text/css" href="styles/style2.css"/> 
+ <link rel="stylesheet" href="styles/jquery-ui.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){ 
+	$(".date").datepicker();
+});
+</script>
+</head>
+
+<body class="minWidth1024">
+
+	<div id="header" class="positionRelative">
+		<div class="floatL marginT15 marginL40 "><img width="157"  src="images/logo.jpg"/></div>
+		<ul id="main_menu" class="marginT44 positionAbsolute zIndex50"> 
+			<li id="coc_li" class="main_menu_selected"><a href="cocs.html" class="fontW700 marginT20 p13Font textCenter fontDarkGrey343336" id="admin_a">COC</a></li> 	
+			<li id="receipt_li" class="main_menu_bg"><a href="receipt.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="adminClasses_a">RECEIPT</a></li> 
+			<li id="orders_li" class="main_menu_bg"><a href="orders.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">ORDERS</a></li> 	
+			<li id="workorder_li" class="main_menu_bg"><a href="workorder.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">WORK ORDER </a></li> 	 	
+			<li id="product_li" class="main_menu_bg"><a href="product.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">PRODUCT</a></li> 	
+			<li id="users_li" class="main_menu_bg"><a href="users.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="adminUsers_a">USERS</a></li> 
+		</ul>
+	</div>
+	<div id="padding" class="cleanBoth paddingT30" style="">
+		 
+		<div id="wrapper" class="bgGreydedede  positionRelative" style=""> 
+			<div class="minHeight600 rightContentArea bgLightGreyf5f5f5 border_bottom1PGreyc5c5c5 border_right1PGreyd5d5d5 border_top1PWhite roundedCorner_BR roundedCorner_TR roundedCorner_BL" id="content">
+			  
+				 
+					<form class="reportFilters" id="reportFilters ">
+							<!-- This starts the top filter-->
+							<div class="floatL">
+								<div>
+									<div id="contentProviderFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p14Font">Order No</label>	
+										<div class="marginL5 displayInlineBlock valueInput" id="contentProvidersSelect" name="contentProviderID" value="3">
+											<input type="text" value="" class="paddingL10 textField width100" id="lotNo">  
+										</div>
+									</div>
+									<div id="studentGroupFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p13Font">Customer</label>	
+										<div class="displayInlineBlock marginL5 valueInput">
+											<input type="text" value="" class="paddingL10 textField width100" > 
+										</div>
+									</div>
+									<div id="dateFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p13Font">Product</label>	
+										<div class="displayInlineBlock marginL5 valueInput" id="datesSelect" name="dateRangeType" value="ALLTIME">
+											<input type="text" value="" class="paddingL10 textField width100" >   
+										</div>
+									</div>
+									<div class="clearBoth"></div>
+								</div>
+								<div class="marginT10">
+									<div id="dateFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p13Font marginR15">Lot NO</label>	
+										<div class="displayInlineBlock marginL5 valueInput" id="datesSelect" name="dateRangeType" value="ALLTIME">
+											<input type="text" value="" class="paddingL10 textField width100" >   
+										</div>
+									</div>
+									<div id="dateFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p13Font">Batch NO</label>	
+										<div class="displayInlineBlock marginL5 valueInput" id="datesSelect" name="dateRangeType" value="ALLTIME">
+											<input type="text" value="" class="paddingL10 textField width100" >   
+										</div>
+									</div>
+									<div id="dateFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p13Font marginR15">From</label>	
+										<div class="displayInlineBlock marginL5 valueInput">
+											<input type="text" value="" class=" date paddingL10 textField width80">   
+										</div>
+									</div> 
+									<div id="dateFilterContainer" class="floatL marginL10">
+										<label class="fontGreyGeneral p13Font">To</label>	
+										<div class="displayInlineBlock marginL5 valueInput" >
+											<input type="text" value="" class=" date paddingL10 textField width80">   
+										</div>
+									</div>
+									<div class="clearBoth"></div>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+							<div class="floatR marginT20">
+								<a href="doc/coc.xls" class="border1PGreyc5c5c5 cursorPointer floatR dropdownShadow fontGrey666567 fontW700 lightBtn marginR10 p13Font paddingB9 paddingL20 paddingR20 paddingT9 roundedCorner3">Export</a>
+								<a href="coc.html" class="border1PGreyc5c5c5 cursorPointer floatR dropdownShadow fontGrey666567 fontW700 lightBtn marginR10 p13Font paddingB9 paddingL20 paddingR20 paddingT9 roundedCorner3">New COC</a>
+								<a class="border1PBlack3c3b3e cursorPointer darkBtn dropdownShadow floatR fontGreyeeeeee fontW700 marginR10 p13Font paddingB9 paddingL30 paddingR30 paddingT9 roundedCorner3">Search</a>
+							</div>
+							<div class="clearBoth"></div>
+					</form>
+					<table class="fixedTableLayout roundedCorner width100P border3PGreye7e7e7 marginT20">
+						<tr class="bgLightGreyf5f5f5 fontW700 height40">
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter roundedCorner_TL verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">ORDER NO</span>
+							</th>
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">CUSTOMER</span>
+							</th>
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">LN</span>
+							</th> 
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">PRODUCT</span>
+							</th> 
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">LOT NO</span>
+							</th> 
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">STANDARD</span>
+							</th> 
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle ">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">QUANTITY </span>
+							</th> 
+							<th class="border_bottom3Pgreye7e7e7 border_right1Pgreye7e7e7 border_top1PWhite textCenter verticalMiddle width10P">
+								<span class="fontGrey666567 fontW700 marginL5 marginR5 p13Font">DATE</span>
+							</th>
+						</tr>
+						 
+						<tr class="bgWhite height40">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font ">
+								<div class="fontW700 marginL5 marginR5 noWrap overflowHidden"><a class="textLink">SO1</a></div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font ">
+								<div class="marginL5 marginR5 noWrap overflowHidden">CH2</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 1 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 3</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 0870B002BM654SK  </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 0870B002BM012PT </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 8800B00102CAGZT1</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> BMS 5-95 TY I CL B 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> BMS 5-95 TY I CL B 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> DESOTO STD RED</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 2/8 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 5/10 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 1/9</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">12/05/2011</div>
+							</td>
+							  
+						</tr>
+						<tr class="bgWhite height40">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font ">
+								<div class="fontW700 marginL5 marginR5 noWrap overflowHidden"><a class="textLink">SO1</a></div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font ">
+								<div class="marginL5 marginR5 noWrap overflowHidden">CH2</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 1 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 3</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 0870B002BM654SK  </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 0870B002BM012PT </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 8800B00102CAGZT1</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> BMS 5-95 TY I CL B 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> BMS 5-95 TY I CL B 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> DESOTO STD RED</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 2/8 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 5/10 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 1/9</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">12/05/2011</div>
+							</td>
+							  
+						</tr>
+						<tr class="bgWhite height40">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font ">
+								<div class="fontW700 marginL5 marginR5 noWrap overflowHidden"><a class="textLink">SO1</a></div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font ">
+								<div class="marginL5 marginR5 noWrap overflowHidden">CH2</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 1 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 3</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 0870B002BM654SK  </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 0870B002BM012PT </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 8800B00102CAGZT1</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 32445243</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> BMS 5-95 TY I CL B 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> BMS 5-95 TY I CL B 2 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> DESOTO STD RED</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="noWrap overflowHidden"> 
+									<ul class="width100P textAlignCenter">
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 2/8 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 5/10 </li>
+										<li class="width100P textAlignCenter borderB1PTable verticalAlignM paddingT10 paddingB10"> 1/9</li>
+									</ul>
+								</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 fontGrey666567 p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">12/05/2011</div>
+							</td>
+							  
+						</tr>
+						 
+						 
+					</table>	
+			</div>			
+		</div>
+		<footer class="autoMarginLR clearBoth textCenter" id="footer">
+		Copyright &copy 2012, PPG Aerospace
+		</footer>
+	</div> 
+	 
+</body>
+</html>

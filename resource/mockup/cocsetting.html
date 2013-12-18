@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>COC Setting</title>
+<!--This is the font pulled from google webfont-->
+<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'/>
+<!--This css stylesheet reset everything at the beginning -->
+<link href="styles/reset.css" rel="stylesheet" type="text/css" />
+<!--This is the less style -->
+<link rel="stylesheet" type="text/css" href="styles/style2.css"/> 
+ <link rel="stylesheet" href="styles/jquery-ui.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){ 
+	$(".date").datepicker();
+});
+</script>
+</head>
+
+<body class="minWidth1024">
+
+	<div id="header" class="positionRelative">
+		<div class="floatL marginT15 marginL40 "><img width="157"  src="images/logo.jpg"/></div>
+		<ul id="main_menu" class="marginT44 positionAbsolute zIndex50"> 
+			<li id="coc_li" class="main_menu_bg"><a href="cocs.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="admin_a">COC</a></li> 	
+			<li id="receipt_li" class="main_menu_bg"><a href="receipt.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="adminClasses_a">RECEIPT</a></li> 
+			<li id="orders_li" class="main_menu_bg"><a href="orders.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">ORDERS</a></li> 	
+			<li id="workorder_li" class="main_menu_bg"><a href="workorder.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">WORK ORDER </a></li> 	
+			<li id="cocsetting_li" class="main_menu_selected"><a href="cocsetting.html" class="fontW700 marginT20 p13Font textCenter fontDarkGrey34333" id="content_a">COC SETTING</a></li> 	
+			<li id="product_li" class="main_menu_bg"><a href="product.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">PRODUCT</a></li> 	
+			<li id="users_li" class="main_menu_bg"><a href="users.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="adminUsers_a">USERS</a></li> 
+		</ul>
+	</div>
+	<div id="padding" class="cleanBoth paddingT30" style="">
+		 
+		<div id="wrapper" class="bgGreydedede  positionRelative" style=""> 
+			<div class="minHeight600 rightContentArea bgLightGreyf5f5f5 border_bottom1PGreyc5c5c5 border_right1PGreyd5d5d5 border_top1PWhite roundedCorner_BR roundedCorner_TR roundedCorner_BL" id="content">
+			  
+				 <div  class="centerOuter">
+					<div class="bgWhite  centerInner "> 
+						<div class="bgLightGreyf5f5f5 paddingT30 p13Font roundedCorner ">
+							<div class="floatL ">
+								<div class="fontGrey666567 fontW700 p13Font textLeft">
+									<div id="studentGroupFilterContainer" class="floatL">
+										<label class="fontGreyGeneral p13Font">Customer</label>	
+										<div class="displayInlineBlock marginL5 valueInput">
+											<input type="text" value="" class="paddingL10 textField width180" > 
+										</div>
+									</div>
+									<div id="dateFilterContainer" class="floatL marginL20 ">
+										<label class="fontGreyGeneral p13Font">Product</label>	
+										<div class="displayInlineBlock marginL5 " >
+											<input type="text" value="" class="paddingL10 textField width180" >   
+										</div>
+									</div>
+									<div class="clearBoth"></div>
+								</div>
+								<form class="bgWhite borderGreydedede fontW400 marginT10 paddingT20 paddingB20 paddingL20 paddingR20 roundedCorner textLeft width500">
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Product Name</label>	
+										</div>				
+										<input type="text" value="" class="paddingL10 textField width180" >   
+									</div>	
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Standard</label>	
+										</div>				
+										<input type="text" value="" class="paddingL10 textField width180" >   
+									</div>	
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Description</label>	
+										</div>				
+										<input type="text" value="" class="paddingL10 textField width180" >   
+									</div>	
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Code</label>	
+										</div>				
+										<input type="text" value="" class="paddingL10 textField width180" >   
+									</div>	
+									<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">CHINA Standard</label>	
+										</div>				
+										<input type="text" value="" class="paddingL10 textField width180" >   
+									</div>	
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Lot DOM</label>	
+										</div>				
+									 			
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Batch DOM</label>	
+										</div>				
+										 
+									</div>	
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Lot DOP</label>	
+										</div>				
+										 	
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Batch DOP</label>	
+										</div>				 
+									</div>	
+								 	<div class="marginT5 marginB5">					
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Lot DOE</label>	
+										</div>				
+									 			
+										<div class="checkbox displayInlineBlock width200">
+												<input type="checkbox" name="role" >
+												<label class="fontGrey666567 p14Font" for="checkbox1-1">Batch DOE</label>	
+										</div>				   
+									</div>	
+								 	
+									 			
+								</form>
+								<div class=" border_top1PWhite paddingB14 paddingT14 roundedCorner_BL roundedCorner_BR textCenter">
+									<a id="print" class="bgGradientBlack border1PBlack3c3b3e cursorPointer displayInlineBlock dropdownShadow fontGreyeeeeee fontW700 p13Font paddingB7 paddingL30 paddingR30 paddingT7 roundedCorner3 ">Save</a>
+								</div>	
+							 </div>
+							<div class="clearBoth"></div>
+						</div>	
+						 
+					</div>									
+				</div>	
+			</div>			
+		</div>
+		<footer class="autoMarginLR clearBoth textCenter" id="footer">
+		Copyright &copy 2012, PPG Aerospace
+		</footer>
+	</div> 
+	 
+</body>
+</html>

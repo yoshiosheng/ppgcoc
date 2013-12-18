@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>COC Edit</title>
+<!--This is the font pulled from google webfont-->
+<link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'/>
+<!--This css stylesheet reset everything at the beginning -->
+<link href="styles/reset.css" rel="stylesheet" type="text/css" />
+<!--This is the less style -->
+<link rel="stylesheet" type="text/css" href="styles/style2.css"/> 
+ <link rel="stylesheet" href="styles/dlprint.css" type="text/css" media="print" />
+ <link rel="stylesheet" href="styles/jquery-ui.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/coc.js"></script>
+<script type="text/javascript" src="js/dlprint.js"></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+</head>
+
+<body class="minWidth1024">
+
+	<div id="header" class="positionRelative noprint">
+		<div class="floatL marginT15 marginL40 "><img width="157"  src="images/logo.jpg"/></div>
+		<ul id="main_menu" class="marginT44 positionAbsolute zIndex50"> 
+			<li id="coc_li" class="main_menu_selected"><a href="cocs.html" class="fontW700 marginT20 p13Font textCenter fontDarkGrey343336" id="admin_a">COC</a></li> 	
+			<li id="receipt_li" class="main_menu_bg"><a href="receipt.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="adminClasses_a">RECEIPT</a></li> 
+			<li id="orders_li" class="main_menu_bg"><a href="orders.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">ORDERS</a></li> 	
+			<li id="workorder_li" class="main_menu_bg"><a href="workorder.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">WORK ORDER </a></li> 	 	
+			<li id="product_li" class="main_menu_bg"><a href="product.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="content_a">PRODUCT</a></li> 	
+			<li id="users_li" class="main_menu_bg"><a href="users.html" class="fontGreyd5d5d5 fontW700 marginT20 p13Font textCenter" id="adminUsers_a">USERS</a></li> 
+		</ul>
+<OBJECT ID="DLPrinter" CLASSID="CLSID:5C230622-45E5-4e3c-893C-3BFDDC4DB5E4" codebase="DLPrinter.CAB" height="0" width="0"></OBJECT>
+		  <script>
+				  DLPrinter.MarginLeft=10;
+				  DLPrinter.MarginRight=10;
+				  DLPrinter.MarginTop=10;
+				  DLPrinter.MarginBottom=10;
+				  DLPrinter.CopyCount=1;
+				  DLPrinter.PageHeader="";
+				  DLPrinter.PageFooter="";
+				  DLPrinter.IsLandScape=1;
+		  		  //DLPrinter.ContentURL="http://www.cnblogs.com/Yahong111/archive/2007/09/19/898326.html";
+		</script>
+	</div>
+	<div id="padding" class="cleanBoth paddingT30" >
+		 
+		<div id="wrapper" class="bgGreydedede positionRelative" > 
+			<div class="rightContentArea bgLightGreyf5f5f5 border_right1PGreyd5d5d5 border_top1PWhite roundedCorner_BR roundedCorner_TR roundedCorner_BL" id="content">
+			   		<div id="editTable" class="noprint">
+					<table class="fixedTableLayout width100P  COCTable bgWhite tablePageBreak">
+						<tr class="bgWhite ">
+							<td class="border_bottom1P000000 border_top1Pgreye7e7e7 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="5" style="font-size: 30px;vertical-align:middle;">
+								<div class="fontW700 marginL5 marginR5 noWrap overflowHidden tableTitle" >Certificate Of Conformance</div>
+							</td>
+							 
+							<td class="border_bottom1P000000 border_top1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width15P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden textAlignLeft">
+									<div class="fontW700">PPG Aerospace</div>
+									PRC-DeSoto<br/>
+									PPG Aerospace Meterials(Suzhou)Co.,Ltd<br/>
+									No.155 Hua Shan Road<br/>
+									Suzhou New District<br/>
+									Suzhou 215129<br/>
+									Tel:+86-512-66615858<br/>
+									Fax:+86-512-66616868
+								</div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite ">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden">PRC-DeSoto Order No./Revision</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Order Date</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Customer PO Number</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Contact</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Ship VIA</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Page</div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite ">
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden"><input  id="orderNo" type="text" class="border0 width100P" value="" name="orderNo"> </input></div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden"  > <input  id="orderDate" type="text" class="date border0 width100P"  value="" name="orderDate"> </input> </div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden"  > <input  id="customerPONumber" type="text" class="border0 width100P"  value="" name="custocustomerPONumbermerAccountNum"> </input> </div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden"  ><input  id="contact" type="text" class="border0 width100P"  value="" name="contact"> </input> </div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden"  ><input  id="shipVIA" type="text" class="border0 width100P"  value="" name="shipVIA"> </input> </div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden" ><input  id="page" type="text" class="border0 width100P"  value="" name="page"> </input> </div>
+							</td>
+						</tr>
+						<tr class="bgWhite">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width20P " colspan="4">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Sold To:</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width20P" colspan="3">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Ship To:</div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite">
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width20P height40" colspan="4">
+								<div class="marginL5 marginR5 noWrap overflowHidden"  ><textarea  id="soldTo" type="text" class="overflowHidden border0 width100P height100P p13Font lineHeight15"  value="" name="soldTo" ></textarea></div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width20P" colspan="3">
+								<div class="marginL5 marginR5 noWrap overflowHidden" ><textarea  id="shipTo" type="text" class="overflowHidden border0 width100P height100P p13Font lineHeight15"  value="" name="shipTo" ></textarea></div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Customer Account Number</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Credit Terms</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Ship VIA</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Consignment Note Number</div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite">
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden"><input  id="customerName" type="text" class="border0 width100P"  value="" name="customerAccountNum"> </input></div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P">
+								<div class="marginL5 marginR5 noWrap overflowHidden"> <input  id="creditTerms" type="text" class="border0 width100P"  value="" name="creditTerms"> </div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden"><input  id="shipVia" type="text" class="border0 width100P"  value="" name="shipVia"> </div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden"> <input  id="consignmentNoteNumber" type="text" class="border0 width100P"  value="" name="consignmentNoteNumber"></div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite">
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="3">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Attention</div>
+							</td>
+							 
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Telephone</div>
+							</td>
+							<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden">Remarks</div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite">
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="3">
+								<div class="marginL5 marginR5 noWrap overflowHidden"><input  id="attention" type="text" class="border0 width100P"  value="" name="attention"> </div>
+							</td>
+							 
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden"> <input  id="telephone" type="text" class="border0 width100P"  value="" name="telephone"></div>
+							</td>
+							<td class="border_bottom1P000000 border_right1Pgreye7e7e7  p13Font width10P" colspan="2">
+								<div class="marginL5 marginR5 noWrap overflowHidden"> <input  id="remarks" type="text" class="border0 width100P"  value="" name="remarks"></div>
+							</td>
+							 
+						</tr>
+						<tr class="bgWhite itemRow" >
+							<td class="paddingBottom10 border_left1Pgreye7e7e7 border_right1Pgreye7e7e7 padding0" colspan="7" >
+								<div id="itemTables" class="minHeight380">
+									<table class="fixedTableLayout width100P">
+										<tr class="bgWhite ">
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font width5P"  >
+												<div class="marginL5 marginR5 noWrap overflowHidden textAlignCenter">Ln#</div>
+											</td>
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font  width35P">
+												<div class="marginL5 marginR5 noWrap overflowHidden">Item/Description</div>
+											</td>
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font  width10P ">
+												<div class="marginL5 marginR5 noWrap overflowHidden textAlignCenter">Ship Date</div>
+											</td>
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font  width10P ">
+												<div class="marginL5 marginR5 noWrap overflowHidden textAlignCenter">Qty Ordered </div>
+											</td>
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font  width10P ">
+												<div class="marginL5 marginR5 noWrap overflowHidden textAlignCenter">UOM</div>
+											</td>
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font  width10P">
+												<div class="marginL5 marginR5 noWrap overflowHidden textAlignCenter">Qty Shipped</div>
+											</td>
+											<td class="border_bottom1Pgreye7e7e7 border_right1Pgreye7e7e7  p13Font  width10P ">
+												<div class="marginL5 marginR5 noWrap overflowHidden textAlignCenter"></div>
+											</td>
+										</tr>
+										
+									</table>
+									   
+								  </div>
+							</td> 
+						</tr>
+						 
+						<tr class="bgWhite signRow ">
+							<td class="border_bottom1Pgreye7e7e7   border_right1Pgreye7e7e7 border_left1Pgreye7e7e7  p13Font width35P" colspan="5" >
+								<div class="marginL5 marginR5 overflowHidden" >
+									WE CERTIFY THAT MATERIAL HAS BEEN MANUFACTURED AND<br/> 
+									TESTED IN ACCORDANCE WITH APPLICABLE SPECIFICATION(S),TEST DATA PERTAINING <br/>
+									TO THIS MATERIAL IS ON FILE AND AVAILABLE FOR INSPECTION UPON REQUEST.
+								</div>
+							</td>
+							 
+							<td class="border_bottom1Pgreye7e7e7   border_right1Pgreye7e7e7  p13Font width10P" colspan="2" style="vertical-align: bottom;">
+								<div class="marginL5 marginR5 noWrap overflowHidden textAlignLeft border_top2p000000">
+									 PRC-DeSoto International
+								</div>
+							</td>
+							 
+						</tr>
+					</table>
+					</div>
+					<div id="cocPrint">
+					</div>	
+					<div id="psPrint">
+					</div>	
+					<div id="filePrint">
+					</div>	
+			</div>			
+		</div>
+		 
+		<footer class="autoMarginLR clearBoth textCenter" id="footer">
+		Copyright &copy 2013, PPG Aerospace
+		</footer>
+	</div> 
+	<div class="jump-top-box noprint">
+		<img id="printer" src="images/printer.png" width="60"> <br><br>
+		<img id="saveBut" src="images/save.png" width="60"> <br><br> 
+		<img id="settingBut" src="images/setting.png" width="60"> <br><br> 
+		<img id="back" src="images/undo.png" width="60"> 
+	</div> 
+	<div id="printOption" class="centerOuter displayNone noprint">
+		<div class="bgWhite border5PGrey666567 centerInner roundedCorner10">
+			<div id="close" class="closeBtn cursorPointer positionAbsolute"><img alt="close" src="img/lightboxCloseBtn.png"></div>
+			<div class="bgLightGreyf5f5f5 paddingT30 p13Font roundedCorner ">
+				 
+					<div class="floatL marginL30 marginR30">
+						<div class="fontGrey666567 fontW700 p13Font textLeft">Print Configuration</div>
+						<form class="bgWhite borderGreydedede fontW400 height200  marginB20 marginT20 paddingT20 paddingL20 paddingR20 roundedCorner textLeft width380">
+							 <div class="fontW700 p16Font">Which Report should be printed?</div>	
+							<div class="checkbox">
+									<input type="checkbox" id="checkbox1-1" name="role">
+									<label class="fontGrey666567 p14Font" for="checkbox1-1">Certificate Of Conformance</label>	
+							</div>										
+							<div class="checkbox">
+									<input type="checkbox" id="checkbox1-1" name="role">
+									<label class="fontGrey666567 p14Font" for="checkbox1-1">Packing Slip</label>	
+							</div>				
+							<div class="fontW700 marginT20 p16Font">Which Attachment should be printed?</div>						
+							 <div class="checkbox">
+									<input type="checkbox" id="checkbox1-1" name="role">
+									<label class="fontGrey666567 p14Font" for="checkbox1-1">8620GXXXXXCAGBCX:32445243</label>	
+							</div>	
+							 <div class="checkbox">
+									<input type="checkbox" id="checkbox1-1" name="role">
+									<label class="fontGrey666567 p14Font" for="checkbox1-1">7620GXXXXXCAGBCX:32445243</label>	
+							</div>	
+							 <div class="checkbox">
+									<input type="checkbox" id="checkbox1-1" name="role">
+									<label class="fontGrey666567 p14Font" for="checkbox1-1">76620GXXXXXCAGBCX:32445243</label>	
+							</div>	 						
+						</form>
+					</div>
+					 
+					<div class="clearBoth"></div>
+			</div>	
+			<div class="bgGradientLightGrey border_top1PWhite paddingB14 paddingT14 roundedCorner_BL roundedCorner_BR textCenter">
+				<a id="print" class="bgGradientBlack border1PBlack3c3b3e cursorPointer displayInlineBlock dropdownShadow fontGreyeeeeee fontW700 p13Font paddingB7 paddingL30 paddingR30 paddingT7 roundedCorner3 ">Print</a>
+			</div>	
+		</div>									
+	</div>
+ 
+	 
+	<div id="settingForm" class="centerOuter displayNone noprint">
+		<div class="bgWhite border5PGrey666567 centerInner roundedCorner10">
+			<div id="close" class="closeBtn cursorPointer positionAbsolute"><img alt="close" src="img/lightboxCloseBtn.png"></div>
+			<div class="bgLightGreyf5f5f5 paddingT30 p13Font roundedCorner ">
+				<div class="border_bottom1Pgreye7e7e7">
+					<div class="floatL marginL30 marginR30">
+						<div class="fontGrey666567 fontW700 p13Font textLeft">COC Setting</div>
+						<form class="bgWhite borderGreydedede fontW400 marginT10 paddingT20 paddingB20 paddingL20 paddingR20 roundedCorner textLeft width500">
+							 <div class="fontW700 p16Font  marginB10">Which Customer and Which Product is setted ?</div>
+							<div class="fontGrey666567 fontW700 p13Font textLeft">
+								<div id="studentGroupFilterContainer" class="floatL">
+									<label class="fontGreyGeneral p13Font">Customer</label>	
+									<div class="displayInlineBlock marginL5 valueInput">
+										<input type="text" value="" class="paddingL10 textField width150" > 
+									</div>
+								</div>
+								<div id="dateFilterContainer" class="floatL marginL10">
+									<label class="fontGreyGeneral p13Font">Product</label>	
+									<div class="displayInlineBlock marginL5 " >
+										<input type="text" value="" class="paddingL10 textField width150" >   
+									</div>
+								</div>
+								<div class="clearBoth"></div>
+							</div>
+							 <div class="fontW700 p16Font marginT10 marginB10">What is the setting for selected Customer and Product ?</div>
+						 	<div class="marginT10 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Product Name</label>	
+								</div>				
+								<input type="text" value="" class="paddingL10 textField width180" >   
+							</div>	
+						 	<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Standard</label>	
+								</div>				
+								<input type="text" value="" class="paddingL10 textField width180" >   
+							</div>	
+						 	<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Description</label>	
+								</div>				
+								<input type="text" value="" class="paddingL10 textField width180" >   
+							</div>	
+						 	<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Code</label>	
+								</div>				
+								<input type="text" value="" class="paddingL10 textField width180" >   
+							</div>	
+							<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">CHINA Standard</label>	
+								</div>				
+								<input type="text" value="" class="paddingL10 textField width180" >   
+							</div>	
+						 	<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Lot DOM</label>	
+								</div>				
+							 			
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Batch DOM</label>	
+								</div>				
+								 
+							</div>	
+						 	<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Lot DOP</label>	
+								</div>				
+								 	
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Batch DOP</label>	
+								</div>				 
+							</div>	
+						 	<div class="marginT5 marginB5">					
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Lot DOE</label>	
+								</div>				
+							 			
+								<div class="checkbox displayInlineBlock width200">
+										<input type="checkbox" name="role" >
+										<label class="fontGrey666567 p14Font" for="checkbox1-1">Batch DOE</label>	
+								</div>				   
+							</div>	 
+						</form>
+					</div>
+					 
+					<div class="clearBoth"></div>
+				</div>	
+				<div class="bgGradientLightGrey border_top1PWhite paddingB14 paddingT14 roundedCorner_BL roundedCorner_BR textCenter">
+					<a id="import" class="bgGradientBlack border1PBlack3c3b3e cursorPointer displayInlineBlock dropdownShadow fontGreyeeeeee fontW700 p13Font paddingB7 paddingL30 paddingR30 paddingT7 roundedCorner3 ">Import</a>
+				</div>	
+			</div>									
+		</div>
+	</div>
+</body>
+</html>

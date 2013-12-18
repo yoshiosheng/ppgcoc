@@ -1,0 +1,57 @@
+微信公众平台
+微信公众平台 营销
+微信公众平台 推广
+微信公众平台 运营
+微信公众平台 粉丝
+微信公众平台 订阅
+微信公众平台 品牌
+微信公众平台 服务
+微信公众平台 开发
+微信公众平台 好处
+微信公众平台 导航
+微信公众平台 推荐
+微信公众平台 账号
+微信平台
+微信公众平台 淘宝
+微信公众平台 群发
+微信公众平台 政府
+微信公众平台 酒店
+微信公众平台 餐饮
+微信公众平台 旅游
+微信公众平台 超市
+微信营销
+微信推广
+微信运营
+微信销售
+微信 餐饮
+微信 酒店
+微信 旅游
+微信 店铺
+微信 淘宝
+
+DELETE FROM `printproduct`.`app_req_word` 
+WHERE 
+B_WORD NOT LIKE '%微%' AND 
+B_WORD NOT LIKE '%微营销%' AND 
+B_WORD NOT LIKE '%公众%' AND 
+B_WORD NOT LIKE '%微信%';
+SELECT * FROM `printproduct`.`app_req_word` 
+WHERE 
+B_WORD NOT LIKE '%微营销%' AND 
+B_WORD NOT LIKE '%公众%' AND 
+B_WORD NOT LIKE '%微信%';
+
+SELECT * FROM `printproduct`.`app_req_word`
+WHERE
+B_WORD NOT LIKE '%微营销%' AND
+B_WORD NOT LIKE '%公众%' AND
+B_WORD NOT LIKE '%微信%';
+
+
+UPDATE `printproduct`.`app_req_word` SET B_PV= replace(B_PV,'>','');
+UPDATE `printproduct`.`app_req_word` SET B_PV= replace(B_PV,'<','');
+
+
+SELECT B_WORD,cast(B_PV as UNSIGNED)  FROM `printproduct`.`app_req_word` WHERE cast(B_PV as UNSIGNED)<1000;
+SELECT B_WORD,cast(B_PV as UNSIGNED)  FROM `printproduct`.`app_req_word` WHERE cast(B_PV as UNSIGNED)>1000;
+SELECT SUM(cast(B_PV as UNSIGNED))   FROM `printproduct`.`app_req_word` WHERE cast(B_PV as UNSIGNED)<1000;

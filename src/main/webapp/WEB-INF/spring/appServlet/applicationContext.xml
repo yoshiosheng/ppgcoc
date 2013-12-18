@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/cache
+		http://www.springframework.org/schema/cache/spring-cache.xsd">
+		
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    
+    <!-- Enable annotation configuration -->
+    <context:annotation-config/>
+	
+	<!-- 
+		Scans the classpath for annotated components that will be auto-registered as Spring beans. By 
+ 		default, the Spring-provided @Component, @Repository, @Service, and @Controller stereotypes will 
+ 		be detected
+	 -->
+	<context:component-scan base-package="com.productprint.pp" />
+	
+	<!-- path for static content such as .css, .js , .png etc -->
+	<mvc:resources mapping="/assets/**" location="/assets/" />
+	
+	<!-- Process cache annotations -->
+	<!--
+	<cache:annotation-driven cache-manager="cacheManager" />
+	-->
+
+	<mvc:interceptors>
+      <beans:bean class="com.productprint.pp.web.CurrentUserInterceptor" />
+    </mvc:interceptors>
+	
+	<!-- Enable annotation-based controllers using @Controller annotations -->
+    <beans:bean id="annotationUrlMapping"
+          class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <beans:property name="interceptors" ref="currentUserInterceptor"/>
+    </beans:bean>
+
+    <beans:bean id="annotationMethodHandlerAdapter"
+          class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+	<beans:bean id="multipartResolver"
+	    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	
+	    <!-- one of the properties available; the maximum file size in bytes -->
+	    <!-- beans:property name="maxUploadSize" value="100000"/ -->
+	    <beans:property name="maxUploadSize" value="1000000"/>
+	</beans:bean>
+
+
+	<!-- Maps view names to JSP templates in /WEB-INF/views -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/" />	
+        <beans:property name="suffix" value=".jsp" />
+        <beans:property name="order" value="2" />        
+    </beans:bean>
+    
+    <!-- original class :> UrlBasedViewResolver -->
+    <beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+         <beans:property name="viewClass">
+           <beans:value>
+             org.springframework.web.servlet.view.tiles2.TilesView
+           </beans:value>
+         </beans:property>
+         <beans:property name="requestContextAttribute" value="requestContext" />     
+         <beans:property name="viewNames" value="*.tiles" />  
+         <beans:property name="order" value="1" />     
+     </beans:bean>
+
+   	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+    	<beans:property name="definitions">
+        	<beans:list>
+            	<beans:value>/WEB-INF/*tiles.xml</beans:value>
+        	</beans:list>
+    	</beans:property>
+  	</beans:bean>
+  
+   	<!-- Use Apache Shiro's EhCacheManager
+  	<beans:bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+    	<beans:property name="cacheManager" ref="ehCacheManager" />
+  	</beans:bean>
+  	-->
+  	
+  	<!-- Let's use some enterprise caching support for better performance.  You can replace this with any enterprise
+         caching framework implementation that you like (Terracotta+Ehcache, Coherence, GigaSpaces, etc -->
+    <beans:bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <!-- Set a net.sf.ehcache.CacheManager instance here if you already have one.  If not, a new one
+             will be creaed with a default config:-->
+             <beans:property name="cacheManager" ref="ehCacheManager"/>
+        <!-- If you don't have a pre-built net.sf.ehcache.CacheManager instance to inject, but you want
+             a specific Ehcache configuration to be used, specify that here.  If you don't, a default
+             will be used.:
+        <beans:property name="cacheManagerConfigFile" value="classpath:WEB-INF/ehcache.xml"/>-->
+    </beans:bean>
+  
+  	<!-- Ehcache library setup -->
+  	<beans:bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+    	<beans:property name="configLocation">
+      		<beans:value>/WEB-INF/ehcache.xml</beans:value>
+    	</beans:property>
+    	<beans:property name="shared" value="true" />
+  	</beans:bean>
+
+	<!-- =========================================================
+         Shiro Core Components - Not Spring Specific
+         ========================================================= -->
+    <!-- Shiro's main business-tier object for web-enabled applications
+         (use DefaultSecurityManager instead when there is no web environment)-->
+	<beans:bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+	    <beans:property name="cacheManager" ref="shiroCacheManager"/>
+    	<!-- By default the servlet container sessions will be used.  Uncomment this line
+         	to use shiro's native sessions (see the JavaDoc for more):
+    	<beans:property name="sessionMode" value="native"/>-->
+    	<!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
+    	<beans:property name="realm" ref="UserRealm"/>
+	</beans:bean>
+	
+	<!-- Define the Shiro Realm implementation you want to use to connect to your back-end -->
+	<!-- security datasource: -->
+	<beans:bean id="UserRealm" class="com.productprint.pp.security.UserRealm">
+		<beans:property name="name" value="UserRealm"/>
+        <!--<beans:property name="dataSource" ref="dataSource"/>-->
+	</beans:bean>
+	
+	<!-- =========================================================
+         Shiro Spring-specific integration
+         ========================================================= -->
+    <!-- Post processor that automatically invokes init() and destroy() methods
+         for Spring-configured Shiro objects so you don't have to
+         1) specify an init-method and destroy-method attributes for every bean
+            definition and
+         2) even know which Shiro objects require these methods to be
+            called. -->
+	<beans:bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+	<!-- Enable Shiro Annotations for Spring-configured beans.  Only run after -->
+	<!-- the lifecycleBeanProcessor has run: -->
+	<beans:bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
+	<beans:bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+    	<beans:property name="securityManager" ref="securityManager"/>
+	</beans:bean>
+
+	<!-- Define the Shiro Filter here (as a FactoryBean) instead of directly in web.xml -
+         web.xml uses the DelegatingFilterProxy to access this bean.  This allows us
+         to wire things with more control as well utilize nice Spring things such as
+         PropertiesPlaceholderConfigurer and abstract beans or anything else we might need: -->
+	<beans:bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    	<beans:property name="securityManager" ref="securityManager"/>
+    	<!-- override these for application-specific URLs if you like:-->
+    	<beans:property name="loginUrl" value="/login"/>
+    	<beans:property name="successUrl" value="/home"/>
+    	<beans:property name="unauthorizedUrl" value="/unauthorized"/>
+    	<!-- The 'filters' property is usually not necessary since any declared javax.servlet.Filter 
+    		 bean defined will be automatically acquired and available via its beanName in chain 
+    		 definitions unless performing an override, which we want to do here (make authc point 
+    		 to a PassthruAuthenticationFilter instead of the default FormAuthenticationFilter: -->
+    	<beans:property name="filters">
+            <beans:map>
+                <beans:entry key="authc">
+                    <beans:bean class="org.apache.shiro.web.filter.authc.PassThruAuthenticationFilter"/>
+                </beans:entry>
+            </beans:map>
+        </beans:property>
+    	<beans:property name="filterChainDefinitions">
+        	<beans:value>
+            	# some example chain definitions:
+            	#/admin/** = authc, roles[admin]
+            	#/docs/** = authc, perms[document:read]
+            	#/** = authc
+            	# more URL-to-FilterChain definitions here
+            	/login* = anon
+            	/passwordreset/** = anon
+            	/forgotpassword = anon
+            	/forgotPassword/validateemail = anon
+            	/assets/** = anon
+                # allow WebStart to pull the jars for the swing app:
+                /*.jar = anon
+                # everything else requires authentication:
+                /** = authc
+        	</beans:value>
+    	</beans:property>
+	</beans:bean>
+
+	<!-- A PropertyPlaceholderConfigurer which loads properties from ipw-deployment.properties      -->
+	<beans:bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<beans:property name="locations">
+			<beans:list>
+				<beans:value>/WEB-INF/spring/appServlet/spring.properties</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+</beans:beans>

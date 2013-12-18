@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd" >
+<tiles-definitions>
+
+	<!-- Dashboard Template -->
+	<definition name="dashboardCommon" template="/WEB-INF/views/tiles/layout/mainTemplate.jsp">
+        <put-attribute name="navBar" value="/WEB-INF/views/tiles/layout/navBar.jsp"/>
+        <put-attribute name="breadCrumbs" value="/WEB-INF/views/tiles/layout/breadCrumbs.jsp"/>
+        <put-attribute name="sideBar" value="/WEB-INF/views/tiles/layout/dashboardSideBar.jsp"/>
+        <put-attribute name="pageContent" value=""/>
+        <put-attribute name="aceSettingsContainer" value="/WEB-INF/views/tiles/layout/aceSettingsContainer.jsp"/>
+    </definition>
+    
+    <definition name="dashboard.tiles" extends="dashboardCommon">
+        <put-attribute name="title" value="Dashboard"/>
+        <put-attribute name="pageContent" value="/WEB-INF/views/dashboard/landing.jsp"/>
+    </definition>
+	 
+	<!-- End Dashboard Template -->
+
+</tiles-definitions>
